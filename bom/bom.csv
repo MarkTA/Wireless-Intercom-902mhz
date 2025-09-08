@@ -24,7 +24,7 @@ DSP1,1,ST/NXP/ESP,Cortex-M4F/M7-class,MCU with DSP for AEC/AGC,N/A,N/A,LQFP/QFN,
 AMP1,1,Generic,PAM8302-class,Class-D speaker amp,N/A,N/A,SOIC/MSOP,0.5–3 W into 4–8 Ω
 SPK1,1,Generic,8Ω-Speaker,Small speaker,N/A,N/A,–,Sized for enclosure
 PWR1,1,Generic,DC-Jack-or-JST,Power input connector 9–12 V,N/A,N/A,TH,Wall wart or battery
-DC1,1,TI/Richtek,5V-Buck,Step-down converter to 5 V,N/A,N/A,QFN/SO,≥1–2 A, low ripple
+DC1,1,TI/Richtek,5V-Buck,Step-down converter to 5 V,N/A,N/A,QFN/SO,≥1–2 A low ripple
 LDO_RF,1,TI/ADI,3V3-LDO-LowNoise,Low-noise LDO for RF/PLL,N/A,N/A,SOT-223/SOT-23,Separate from digital rail
 LDO_DIG,1,TI/OnSemi,3V3-LDO,3.3 V LDO for MCU/digital,N/A,N/A,SOT-223/SOT-23,Split rails with ferrites
 UI1,1,Generic,Buttons+LEDs,User interface (power/TX/lock),N/A,N/A,TH/SMD,Status indication
