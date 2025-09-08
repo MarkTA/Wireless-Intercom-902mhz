@@ -1,21 +1,26 @@
 refdes,quantity,manufacturer,part_number,description,frequency_center_mhz,bandwidth_mhz,package,notes
-ANT1,2,Generic,915MHz-ISM-Whip,Whip antenna 902–928 MHz,915,26,SMA,General ISM antenna for bring-up
-Jx,6,Samtec/Amphenol,Edge-SMA,Edge-mount SMA connector,N/A,N/A,PCB Edge,For bench filters and test gear
-FBA1,1,Mini-Circuits,ZX75BP-915-S+,Bandpass filter module,915,~25,SMA in-line,Breadboard ISM preselector
-FBA2,1,Mini-Circuits,ZVBP-909A-S+,Cavity bandpass filter,909,~13,SMA in-line,Helpful shaping near 906 MHz RX
-FBA3,1,Southwest Antennas,1080-100/101,In-line ISM band BPF,915,~26,SMA or RP-SMA,Low-IL whole-band preselector
-FBB1,2,Abracon,AFS915 series / ABSES5AD-1E3M012M,SAW BPF wide ISM,915,~26,SMD,Board-level OOB suppression
-FBB2,2,Murata,SF2053E,SAW BPF usable 908.75–921.25,915,~12.5,SMD,Wide ISM preselector
-FBB3,2,RF360/TDK,B4344 / B3728,SAW BPF ISM (10–26 BW options),915,10–26,SMD,Moderate selectivity preselector
-FBC1,2,Tai-Saw,TA0562A,SAW BPF centered 906,906,~36,SMD,Channel-select RX (medium BW)
-FBC1,2,Anatech,AM906S530 / AM906B1118,SAW/Ceramic BPF 906,906,5–38 (variants),SMD,Option toward tighter 906 lane
-FBC2,2,ITF,F9201,SAW BPF centered 920,920,appx 10–20,SMD,Channel-select TX (920-centered)
-FBC2,2,Dynamic Engineers,SF3030AO-920,SAW BPF 920 (medium BW),920,~40,SMD,Medium selectivity option
-LNA1,2,Mini-Circuits,PSA4-5043+,LNA 50–4000 MHz,N/A,N/A,SOT-343,Low NF front-end gain
-MIX1,2,Mini-Circuits,ZFM-2-S+,Mixer 1–1000 MHz (bench),N/A,N/A,SMA module,Fast bench down/up-conversion
-MIX1,2,Mini-Circuits,ADE-12+,Mixer 50–1000 MHz (SMD),N/A,N/A,SMD,On-board mixer option
-PLL1,2,Analog Devices,ADF4351,Frac-N PLL+VCO 35–4400 MHz,N/A,N/A,QFN / Dev board,Shared LO platform
-IF1,4,TDK/Murata,FFE1070 / SFELF10M7,10.7 MHz ceramic IF filters,10.7,0.15–0.28,TH or SMD,Pick BW for voice (IF)
-DEM1,2,NXP,SA615 / SA616,FM IF system,10.7,Internal,SSOP-20,Limiter + quadrature + RSSI
-ALT-DEM,2,Nisshinbo,NJM2591,FM IF demod IC,10.7 or 0.455,Internal,SOP,Low-power alternative
-CPL1,1,Mini-Circuits,ZFBDC20-900HP or DBTC-7-152X+,Directional/bidirectional coupler,~900,N/A,SMA or SMD,Isolation/cancellation experiments
+ANT1,1,Generic,915MHz-QuarterWave,Wire/whip antenna 902–928 MHz,915,26,Wire or SMA,Start with straight wire ~8.2 cm
+ANT2,1,Generic,915MHz-QuarterWave,Wire/whip antenna 902–928 MHz,915,26,Wire or SMA,Cross-polarize vs ANT1 if possible
+J1..J6,6,Amphenol/Samtec,Edge-SMA,Edge-launch SMA RF connectors,N/A,N/A,PCB Edge,For test inserts; reduce qty if cost sensitive
+FBB_TX1,1,RF360/TDK,B3728-class,SAW BPF wide ISM (TX stage 1),915,~26,SMD,Low-cost preselector
+FBB_TX2,1,RF360/TDK,B3728-class,SAW BPF wide ISM (TX stage 2),915,~26,SMD,Cascade for more rejection
+FBB_RX1,1,RF360/TDK,B3728-class,SAW BPF wide ISM (RX stage 1),915,~26,SMD,Preselector before limiter/LNA
+FBB_RX2,1,RF360/TDK,B3728-class,SAW BPF wide ISM (RX stage 2),915,~26,SMD,Cascade for more rejection
+FBC_RX,1,Tai-SAW/Anatech,TA0562A or AM906-variant,SAW/Ceramic BPF channel-select,906,5–36 (variants),SMD,Optional DNP v1; swap into RX stage 2
+FBC_TX,1,ITF/Dynamic,SF920 or similar,SAW BPF channel-select,920,~10–40,SMD,Optional DNP v1; swap into TX stage 2
+LMT1,1,Generic,RF-Limiter,RF limiter/protector,N/A,N/A,SOT-23,Protects LNA from TX leakage
+LNA1,1,Mini-Circuits,PSA4-5043+-class,LNA 50–4000 MHz,N/A,N/A,SOT-343,Low NF RX front-end
+MIX1,1,Mini-Circuits,ADE-12+-class,Level-7 diode ring mixer 50–1000 MHz,N/A,N/A,SMD,Downconversion to IF
+PLL_RX,1,Analog Devices,ADF4351 (dev board or IC),Frac-N PLL/VCO for RX LO,N/A,N/A,Module/QFN,Target IF=10.7 MHz
+PLL_TX,1,Analog Devices,ADF4351 (dev board or IC),Frac-N PLL/VCO for TX (FM input),N/A,N/A,Module/QFN,Varactor FM modulation path
+XTAL,1,Generic,REF-XTAL,Reference crystal per PLL/MCU,N/A,N/A,TH/SMD,Stability budget for drift/deviation
+IF1,1,Murata/TDK,SFELF/SFTLF/FFE1070,10.7 MHz ceramic IF filter,10.7,~0.15–0.28,TH/SMD,Pick BW for voice FM
+IF2,1,Murata/TDK,SFELF/SFTLF/FFE1070,10.7 MHz ceramic IF filter,10.7,~0.15–0.28,TH/SMD,Second section for ladder
+DEM1,1,NXP,SA615/SA616-class,FM IF/demod IC (limiter + quad det),10.7,Internal,SSOP-20,Classic voice IF chain
+MIC1,1,Generic,Electret/MEMS-Mic,Microphone capsule,N/A,N/A,TH/SMD,Cardioid preferred
+PRE1,1,Analog Devices/TI,Low-noise-opamp,Mic preamp op-amp,N/A,N/A,SOIC/TSSOP,Gain ≈20–40 dB
+FILA1,1,Generic,Audio-HPF/LPF,Passive RC/active filters,N/A,0.15–3.5 kHz,0603/TSSOP,HPF ~150–200 Hz; LPF ~3–4 kHz
+DSP1,1,ST/NXP/ESP,Cortex-M4F/M7-class,MCU with DSP for AEC/AGC,N/A,N/A,LQFP/QFN,Fs 8–16 kHz NLMS AEC
+AMP1,1,Generic,PAM8302-class,Class-D speaker amp,N/A,N/A,SOIC/MSOP,0.5–3 W into 4–8 Ω
+SPK1,1,Generic,8Ω-Speaker,Small speaker,N/A,N/A,–,Sized for enclosure
+PWR1,1,Generic

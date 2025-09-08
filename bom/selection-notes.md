@@ -1,45 +1,73 @@
-Why these picks (quick references)
+Why these picks (Budget Friendly)
 
-Connectorized filters to get you moving: Mini-Circuits ZX75BP-915-S+ (902.5–927.5 MHz) and ZVBP-909A-S+ (902–915 MHz cavity) are handy bench preselectors; Southwest Antennas also sells compact 902–928 MHz inline filters for quick OOB cleanup. 
-[Mini-Circuits](https://www.minicircuits.com/WebStore/modelSearch.html?model=ZX75BP-915-S%2B&srsltid=AfmBOop4REKzZ4-FtJI0-ksqWo3t9y_XshJwuVJEz9G-kpNOuCXltFCq&utm_source=chatgpt.com)
-[DigiKey](https://www.digikey.in/en/products/detail/mini-circuits/ZX75BP-915-S/20526837?utm_source=chatgpt.com)
-[Southwest Antennas](https://southwestantennas.com/products/filter-modules-diplexers-triplexers/bandpass-filter-902-928-mhz-in-line?utm_source=chatgpt.com)
+1) Use SMD SAW filters (they’re a few dollars each)
 
-Wide SMD SAWs for ISM (good OOB rejection, not channel-selective): Murata SF2053E, RF360/TDK B3728/B4344, Abracon AFS915…/ABSES5AD cover most or all of 902–928 MHz. 
-[Mouser Electronics](https://www.mouser.com/datasheet/2/281/sf2053e-784918.pdf?srsltid=AfmBOor1pMSFHUAN4uh_QffFXPYTrTBANAjHyRmwreDs-VLBS3BjDu6H&utm_source=chatgpt.com)
-[Murata](https://www.murata.com/products/productdata/8797690789918/DS-SAFFB1G58KB0F0A.pdf?1681356619000=&utm_source=chatgpt.com)
-[Abracon](https://abracon.com/datasheets/ABSES5AD-1E3M012M.pdf?utm_source=chatgpt.com)
+RF360/TDK B3728 (915 MHz ISM SAW, ~26 MHz PBW): typically $1–$1.30 in singles. 
 
-Channel-select ideas for ~906 and ~920 MHz: Tai-Saw TA0562A (906 MHz), Anatech AM906… (906 MHz options), and ITF F9201 (920 MHz). These move you toward real TX/RX split. (Availability varies; use Stage-A cavity filters during bring-up.) 
-[RFMW](https://www.rfmw.com/products/detail/ta0562a-tst-tai-saw-technology-co-ltd/474208/?srsltid=AfmBOorwfNkSIT0OMJM7ZKG0rs3SyWi6653lgygCutZrSoxoUSKI_qGz&utm_source=chatgpt.com)
-[Anatech Electronics](https://www.anatechelectronics.com/media/pdf/AM906B1118.pdf?utm_source=chatgpt.com)
-[ITF](https://www.itf.co.kr/product/Goods/files/p2/NRNL02-F9201-AS01.pdf?utm_source=chatgpt.com)
+[DigiKey](https://www.digikey.com/en/products/detail/qualcomm-rf-front-end-rffe-filters/B39921B3728U410/3492653?utm_source=chatgpt.com)
 
-Gain/LO/conversion that comfortably spans 900 MHz: Mini-Circuits PSA4-5043+ LNA, mixers ZFM-2-S+ / ADE-12+, and ADI ADF4351 PLL. 
-[Mini-Circuits](https://www.minicircuits.com/pdfs/PSA4-5043%2B.pdf?srsltid=AfmBOop5M2m2cV-tVcqH6rsw3e1sHVBjgfgk-X1csJIFQP-H9aWlQUC9&utm_source=chatgpt.com)
-[Analog Devices](https://www.analog.com/media/en/technical-documentation/data-sheets/adf4351.pdf?utm_source=chatgpt.com)
+[Mouser Electronics](https://www.mouser.com/ProductDetail/RF360/B39921B3728U410?qs=7N3YgXRJ4GVja%252BRYuIWLgQ%3D%3D&srsltid=AfmBOooQhY0-WVcHYT0M3J-b706EPw9e3oGBkMpXi3Xh5iL15iHp73O_&utm_source=chatgpt.com)
 
-IF/Audio: 10.7 MHz ceramic filters (TDK FFE1070, Murata SFELF/SFTLF) into NXP SA615/SA616 (classic FM IF), or NJM2591 as a low-power alternative. 
-[media.digikey.com](https://media.digikey.com/pdf/data%20sheets/tdk%20pdfs/ffe_series.pdf?utm_source=chatgpt.com)
-[www1.futureelectronics.com](https://www1.futureelectronics.com/doc/MURATA/CDALF10M7CA040-B0.pdf?utm_source=chatgpt.com)
-[NXP Semiconductors](https://www.nxp.com/docs/en/data-sheet/SA615.pdf?utm_source=chatgpt.com)
-[Mouser Electronics](https://www.mouser.com/datasheet/2/294/NJM2591_E-12822.pdf?srsltid=AfmBOopHw1NO3C2jojpb3sAbzUBpIrUD7SZrUdS3hTZGF3woDqtkMXGQ&utm_source=chatgpt.com)
+Taiyo Yuden FAR-F5QA-915M00-M2AK-J (915 MHz SAW): often well under $1 (Mouser list shows $0.44 in stock). 
 
-Duplex isolation tools: a 900 MHz-ish directional/bidirectional coupler (e.g., ZFBDC20-900HP or an SMD option) helps you sample leakage for cancellation tuning. 
-[Mini-Circuits](https://www.minicircuits.com/pdfs/ZFBDC20-900HP.pdf?srsltid=AfmBOoo2HnZPGwzpfCvk1xsINjuq4w1HfQshHGozjF6BD_l4Xbo47WM3&utm_source=chatgpt.com)
+[Mouser Electronics](https://www.mouser.com/c/passive-components/signal-conditioning/?frequency=915+MHz&product=SAW+Filters&srsltid=AfmBOoqbBp-8d57FrRV7PLv69CuX6yVa7Jv6hv23vjEA5FvVmbFS5qD_&utm_source=chatgpt.com)
 
------
+Murata SF2053E (915 MHz SAW): common, low cost, widely stocked. 
 
-Practical selection notes (frequency-range centric)
+[Mouser Electronics](https://www.mouser.com/datasheet/2/281/sf2053e-784918.pdf?srsltid=AfmBOorQgwD6R5gGecbr9x_D5bxmcLGXyujuyG6xPwo9g9PETaZcn14F&utm_source=chatgpt.com)
 
-Bring-up path: Start with Stage A (connectorized filter) in front of RX and/or after TX PA. This protects the chain while you validate LO plan and IF. Then migrate to Stage B (board SAW) so the radio works without bench bricks.
+Trick: Cascade two SAWs in each path (TX and RX). Two cheap SAWs often give you ~double the out-of-band rejection for just a few dollars more—far cheaper than a cavity filter.
 
-Tightening for full-duplex: To keep TX@~920 from desensitizing RX@~906, add Stage C channel-select filters (or cascade a Stage-B + Stage-C filter). If sourcing truly narrow SAWs is tricky, a cavity filter in the RX path near 902–915 during development gives you the needed isolation headroom. 
-[Mini-Circuits](https://www.minicircuits.com/pdfs/ZVBP-909A-S%2B.pdf?srsltid=AfmBOooo7TbRFoDiWoplFXmdkHATN5BT6golRxr28VeyTimxe5_rtevI&utm_source=chatgpt.com)
+2) Keep the LO / mixer / LNA inexpensive
 
-Mixers & LO headroom: The ADE-12+ / ZFM-2-S+ cover 900 MHz well; the ADF4351 comfortably synthesizes LOs for low-IF or 10.7 MHz superhet architectures. 
-[Mini-Circuits](https://www.minicircuits.com/WebStore/modelSearch.html?model=ADE-12%2B&srsltid=AfmBOopFUse21jm92LZQjyZYIciXNlyEL8y-omU1Y8FlLZGfvDzshh2L&utm_source=chatgpt.com)
-[Analog Devices](https://www.analog.com/media/en/technical-documentation/data-sheets/adf4351.pdf?utm_source=chatgpt.com)
+LNA: Mini-Circuits PSA4-5043+ is a solid 900 MHz LNA; small-qty price is a few dollars (Digi-Key shows volume pricing around ~$3–$4; single-qty more, but LCSC lists ~$1.28 in stock). 
+[DigiKey](https://www.digikey.com/en/products/detail/mini-circuits/PSA4-5043/13928200?utm_source=chatgpt.com)
+[LCSC Electronics](https://www.lcsc.com/product-detail/RF-Amplifiers_Mini-Circuits-PSA4-5043_C5240848.html?utm_source=chatgpt.com)
 
-IF chain: 10.7 MHz ceramics remain inexpensive and predictable; match the ladder BW to your audio deviation. The SA615/SA616 data sheets show typical voice-IF topologies. 
-[NXP Semiconductors](https://www.nxp.com/docs/en/data-sheet/SA615.pdf?utm_source=chatgpt.com)
+Mixer: Mini-Circuits ADE-12+ (SMD) is widely used and cheap; surplus listings can be ≈$2 each in small lots. 
+[eBay](https://www.ebay.com/itm/284286521849?utm_source=chatgpt.com)
+
+LO/Synth: ADF4351 dev boards (clones) are plentiful—typically $20–$60 each depending on vendor. 
+[eBay](https://www.ebay.com/itm/365633079796?utm_source=chatgpt.com)
+
+
+3) Audio chain stays dirt-cheap
+
+Little class-D amps like PAM8302 are ~$4. 
+[Adafruit](https://www.adafruit.com/product/2130?srsltid=AfmBOoqqXIxNtP6KtorKYou7HwLzlEXtVJUqRe3vv2Opyclyq9JDjrHk&utm_source=chatgpt.com)
+[Jameco](https://www.jameco.com/z/2130-Adafruit-Industries-Adafruit-Mono-Class-D-Audio-Amplifier-2-5W-PAM8302_2294911.html?srsltid=AfmBOorQLiqpoITF-n0NnSZJEIuh1FLJvWH3LXu8qwvWoyDPE-c7plWp&utm_source=chatgpt.com)
+[Micro Center](https://www.microcenter.com/product/668757/adafruit-industries-stemma-audio-amp-mono-25w-class-d-pam8302?utm_source=chatgpt.com)
+
+4) Antennas and mechanics
+
+Start with ¼-wave wires cut for ~915 MHz (~8.2 cm). That’s $0.
+
+If you want connectors, use edge-launch SMA footprints and a pair of $2–$4 whips later.
+
+5) Design moves that save money
+
+Big frequency split (e.g., 906/920 MHz) + low TX power (0 to +3 dBm) + two SAWs in cascade per path + antenna spacing/cross-pol. This stacks isolation without expensive iron.
+
+Add shield cans only on the final PCB (skip during bring-up).
+
+If you ever need more rejection, you can add a DIY microstrip hairpin BPF on your PCB (cost = copper + FR-4).
+
+What your per-node RF spend can look like (rough)
+
+4× SAW filters (2 in TX path, 2 in RX path): ~$4–$6 total. 
+[DigiKey](https://www.digikey.com/en/products/detail/qualcomm-rf-front-end-rffe-filters/B39921B3728U410/3492653?utm_source=chatgpt.com)
+
+1× LNA PSA4-5043+: $2–$4 (or ~$1.30 at LCSC). 
+[DigiKey](https://www.digikey.com/en/products/detail/mini-circuits/PSA4-5043/13928200?utm_source=chatgpt.com)
+[LCSC Electronics](https://www.lcsc.com/product-detail/RF-Amplifiers_Mini-Circuits-PSA4-5043_C5240848.html?utm_source=chatgpt.com)
+
+1× Mixer ADE-12+: $2–$10 depending on source. 
+[eBay](https://www.ebay.com/itm/284286521849?utm_source=chatgpt.com)
+
+1× ADF4351 board: $20–$60 (many vendors). 
+[eBay](https://www.ebay.com/itm/365633079796?utm_source=chatgpt.com)
+[Amazon](https://www.amazon.com/Development-35M-4-4GHz-Synthesizer-Controller-Compatible/dp/B0F9FXQCG8?utm_source=chatgpt.com)
+
+Passives, SMA edge, board, audio amp, etc.: $10–$20.
+
+Ballpark: You can keep the core RF+audio parts under ~$50–$80 per node (not counting general lab gear). Compare that to a single $289 cavity filter—big savings.
